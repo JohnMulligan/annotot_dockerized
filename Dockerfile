@@ -7,6 +7,7 @@ RUN bundle config set force_ruby_platform true
 RUN bundle install
 ENV ENV development
 ENV IP 0.0.0.0
+ENV PORT 8000
 VOLUME /app/db
 RUN cp -r /app/db/migrate /migrations
 ENTRYPOINT /app/entrypoint.sh
