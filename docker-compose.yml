@@ -1,0 +1,19 @@
+---
+version: "3.7"
+
+services:
+  web:
+    build: .
+    container_name: rails_demo
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - "annotot_ruby"
+
+networks:
+    annotot_ruby:
+        driver: "bridge"
+        ipam:
+          driver: "default"
+          config:
+            - subnet: "172.20.0.0/16"
